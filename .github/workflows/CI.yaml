@@ -1,0 +1,21 @@
+name: CI
+
+"on": [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # full history for metadata
+
+      - name: docugen
+        env:
+          JIRA_USER: ${{ secrets.JIRA_USER }}
+          JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
+        run: |
+          echo "WOudl run really" 
+        shell: bash
+
