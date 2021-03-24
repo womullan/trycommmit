@@ -1,6 +1,10 @@
 name: CI
 
-"on": [push, commit]
+"on": [push]
+  workflow_run:
+       workflows: ["manual"]
+           types:
+                   - completed
 
 jobs:
   build:
