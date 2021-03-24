@@ -3,9 +3,9 @@ name: CI
 "on":
   push
   workflow_run:
-       workflows: ["manual"]
-           types:
-                   - completed
+    workflows: ["manual"]
+      types:
+        - completed
 
 jobs:
   build:
